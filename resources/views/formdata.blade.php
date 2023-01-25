@@ -12,7 +12,7 @@
     <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
 </head>
     <body>
-        <form method="POST" action="{{ route('index') }}">                        
+        <form method="POST" action="{{ route('index') }}">
             <div class="form">
                     @csrf
                     <div class="form-group">
@@ -29,9 +29,9 @@
                     </div>
                     <div>
                         <button type="submit" class="btn btn-primary submit">Submit</button>
-                    </div>                    
+                    </div>
             </div>
-        </form>         
+        </form>
         <div class="container">
             <table class="table">
                 <thead>
@@ -49,7 +49,7 @@
                             <td>{{ $data->product_name }}</td>
                             <td>{{ $data->quantity }}</td>
                             <td>{{ $data->price }}</td>
-                            <td>{{ $data->datetime_submitted }}</td>
+                            <td>{{ date('l jS \of F Y h:i:s A', strtotime($data->datetime_submitted)) }}</td>
                             <td>{{ $data->total_value }}</td>
                         </tr>
                     @endforeach
